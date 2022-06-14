@@ -7,7 +7,8 @@ const web3 = createAlchemyWeb3(alchemyKey);
 
 
 const contractABI = require('../contract-abi.json')
-const contractAddress = "0xA2A4246baBeA22e98e72A14702f62a7833c75165";
+const contractAddress = process.env.REACT_APP_CONTRACT;
+const network = process.env.REACT_APP_NETWORK;
 
 export const mintNFT = async (url, name, description) => {
   const accounts = await web3.eth.getAccounts();
@@ -57,7 +58,7 @@ export const mintNFT = async (url, name, description) => {
       });
     return {
       success: true,
-      status: "✅ Check out your transaction on Polygonscan: https://mumbai.polygonscan.com/tx/" + txHash
+      status: "✅ Check out your transaction on Polygonscan: "+ network + txHash
     }
   } catch (error) {
     return {
