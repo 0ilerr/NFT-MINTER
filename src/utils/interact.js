@@ -7,7 +7,7 @@ const web3 = createAlchemyWeb3(alchemyKey);
 
 
 const contractABI = require('../contract-abi.json')
-const contractAddress = process.env.REACT_APP_CONTRACT;
+const contractAddress = "0xA2A4246baBeA22e98e72A14702f62a7833c75165";
 
 export const mintNFT = async (url, name, description) => {
   const accounts = await web3.eth.getAccounts();
