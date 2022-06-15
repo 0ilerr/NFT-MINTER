@@ -57,7 +57,7 @@ export const mintNFT = async (url, name, description) => {
       });
     return {
       success: true,
-      status: "✅ Check out your transaction on Polygonscan: https://mumbai.polygonscan.com/tx/" + txHash
+      status: "✅ Check out your transaction on Polygonscan: https://polygonscan.com/tx/" + txHash
     }
   } catch (error) {
     return {
